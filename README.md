@@ -1,4 +1,19 @@
 # himawaripy
+
+****************************************************************************************
+This  is a  fork of  https://github.com/boramalper/himawaripy  with some  changes aimed
+ at getting working on KDE5 (Kubuntu) 
+Some changes to utils.py - Adding proc.notify
+
+Using crontab -e or kcron add the following , changing paths to suit  your username etc
+
+```
+SHELL=/bin/bash
+PATH=/usr/bin:/usr/local/bin:/home/lawrie/bin:/usr/bin:/bin
+DISPLAY=:0
+*/10 * * * *    /usr/bin/python3  /home/lawrie/tmp/himawaripy-2.0.1-py3.6/himawaripy
+```
+*****************************************************************************************
 *Put near-realtime picture of Earth as your desktop background*
 
 ![24 hours long animation by /u/hardypart](https://i.giphy.com/l3vRnMYNnbhdnz5Ty.gif)

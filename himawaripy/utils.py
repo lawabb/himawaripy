@@ -3,6 +3,7 @@ import re
 import sys
 import subprocess
 from distutils.version import LooseVersion
+import proc.notify
 
 
 def set_background(file_path):
@@ -37,6 +38,13 @@ def set_background(file_path):
                          'set the picture of aDesktop to \"' + file_path + '"\nend repeat\nend tell'])
     elif de == "kde":
         if plasma_version() > LooseVersion("5.7"):
+			
+			# some enviroment variables need setting for cron use
+			REQUIRED_VARIABLES = 'DBUS_SESSION_BUS_ADDRESS', 'DISPLAY', 'XAUTHORITY'
+            context = proc.notify.find_graphical_context()
+            for var in REQUIRED_VARIABLES:
+                context.get_options()['environment'][var]
+                
             ''' Command per https://github.com/boramalper/himawaripy/issues/57
 
                 Sets 'FillMode' to 1, which is "Scaled, Keep Proportions"
