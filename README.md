@@ -2,16 +2,17 @@
 
 ****************************************************************************************
 This  is a  fork of  https://github.com/boramalper/himawaripy  with some  changes aimed
- at getting working on KDE5 (Kubuntu) 
+ at getting working on KDE5 (Kubuntu)
 Some changes to utils.py - Adding proc.notify
 
 Using crontab -e or kcron add the following , changing paths to suit  your username etc
 
 ```
 SHELL=/bin/bash
-PATH=/usr/bin:/usr/local/bin:/home/lawrie/bin:/usr/bin:/bin
+PATH=/usr/bin:/usr/local/bin:/home/username/bin:/usr/bin:/bin
 DISPLAY=:0
-*/10 * * * *    /usr/bin/python3  /home/lawrie/tmp/himawaripy-2.0.1-py3.6/himawaripy
+MAILTO=""
+*/10 * * * *    /usr/bin/python3  /home/username/pathtohimawaripy/himawaripy
 ```
 *****************************************************************************************
 *Put near-realtime picture of Earth as your desktop background*
@@ -134,7 +135,7 @@ the pre-KDE 5.7 method can still be used.
 
 To unlock desktop widgets ([from the KDE userbase](https://userbase.kde.org/Plasma#Widgets)):
 > Open the Desktop Toolbox or the Panel Toolbox or right click on the Desktop - if you see an item labeled Unlock
-> Widgets then select that, and then proceed to add widgets to your Desktop or your Panel. 
+> Widgets then select that, and then proceed to add widgets to your Desktop or your Panel.
 
 #### Before KDE 5.7
 > So the issue here is that KDE does not support changing the desktop wallpaper
